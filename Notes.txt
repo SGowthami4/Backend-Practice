@@ -1,0 +1,50 @@
+//What is HTTP?
+- HTTP stands for Hypertext Transfer Protocol.It is the foundation of the internet and how it functions and exchanges data.
+- HTTP works in a Request and Response system .The client requests a specific resource from the server, and if the resource is available, it will be returned in a response from the server.
+-The server returns a status code in it's response to let the client know if the rquest was successful or not.
+- Status codes are grouped into different numbers each indicating different response types.For example, codes 200-299 mean successful, and codes 300-399 indicate redirection.
+HTTP Status codes
+- 1XX-Informational
+- 2XX- success(Ex:200(ok) successful with no problems)
+- 3XX- redirection
+- 4XX- Client Error (Ex:404(File not found -resource was not located by the server))
+- 5XX- Server Error
+
+- When you load a web page in your browser, the requests are sent to the corresponding server to fetch the various components of the page .Each request returns an individual response.
+
+Features of HTTP:
+ - HTTP has many features that make it the most widespread transfer protocol. HTTP is an application layer protocol based on TCP, a secure transport layer protocol.
+ - HTTP is also stateless, meaning each request and response cycle is separate from the ones before and after.
+ - HTTP also enables the use of HTTP Headers in requests and responses, which allow them to be customized and provide extra information.
+ - HTTP also has a secure version-HTTPS - the standard network conection on the internet.
+  
+//The Anatomy of HTTP Requests:
+- HTTP Requests typically contain three things: 1.a request line, 
+                                                2.header fields, and
+                                                3. a body(This one is optional).
+
+1.The Request line-The request line is made up of 3 parts
+   - Firstly , the HTTP Method,such as GET,POST, or DELETE. 
+   - Secondly, the resource URL. This locates the requested resource on the server.
+   - Thirdly, the current HTTP version. 
+  - The request line is like the foundation of a request, like a pizza base.
+
+2. Header Fields:These provide extra information to the server about the request.
+   There are many different Headers.
+   For example - Content-type, which indicates the data format.
+               - Content-length indicates the length of the data in bytes.
+               - Accept-Language indicates the Language of the content accepted by the client.
+
+3.Body(data)- The last part of the request is the body(data).This part is usually only needed
+if the HTTP method is POST,PUT, or PATCH because it contains the new data being sent to the server.
+For Ex:In a POST request, the body could contain the details of a pizza oder form.
+
+the structure of an HTTP request in full:
+First, there's a request line that contains the HTTP Method, resource URL, and current HTTP version.
+Secondly, the HTTP Header fields provide extra information about the request. If the request is GET, this is all the information needed.
+ However, if the request is POST, PUT, or PATCH, there is a body containing a message. An empty line always separates the Headers and the body.
+
+//Anatomy of an HTTP Response :
+HTTP responses are made by a server in response to a client's request.They inform the client about whether the request was
+successful; if not, they provide error information. They also deliver resources to te client if that's what is requested.
+resources to the client if that's what is requested. There are three components o an HTTP response.
