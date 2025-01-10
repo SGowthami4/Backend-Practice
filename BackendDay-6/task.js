@@ -14,17 +14,14 @@ const client = new Client({
   password: "jtd@123",
   port: 5432,
 });
-function readData() {
-  const data = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(data);
-}
-function writeData(data) {
-  fs.writeFileSync("data.json", JSON.stringify(data));
-}
-app.get("/customers", async (req, res) => {
+
+app.get("/customers/:cust_id", async (req, res) => {
   try {
+    const cust_id = parseInt(req.params.cust_id);
     await client.connect();
-    const result = await client.query("Select * from customers;");
+    const result = await client.query(
+      `Select * from customers where cust_id=${cust_id};`
+    );
     res.status(200).json(result.rows);
   } catch (err) {
     console.error("Error executin query", err.stack);
